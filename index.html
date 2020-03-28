@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+<style>
+.form-label-left, .form-label-right, .form-label-top { display:none; }
+</style>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<body>
+<body align=center>
 <div id="menu">
 <a href="#about">About Me</a> ||
 <a href="#photos">My Photos</a> ||
@@ -73,6 +76,22 @@ third:<br>
 
 </section>
 
+<meta charset="UTF-8">
+<form action="mailto:reyes@post.bgu.ac.il" method="post" enctype="text/plain">
+  Name:<br>
+<input type="text" name="name"><br>
+E-mail:<br>
+<input type="text" name="mail"><br>
+Comment:<br>
+<textarea type="text" name="content" id="text"></textarea>
+<input type="submit" value="Send">
+</form>
+<button id="button">Add Emoji</span>
+<script>
+$("#button").click(function() {
+  document.getElementById("text").value += String.fromCodePoint(0x1F47B);
+});
+</script>
 
 <script type="text/javascript">
 $(function(){
@@ -87,5 +106,6 @@ $(function(){
     $('#menu').toggle($(this).scrollTop()>1000)
  });​
  </script>
+
 </body>
 </html>
