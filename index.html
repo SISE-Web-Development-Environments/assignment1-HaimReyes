@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
 <style>
 .form-label-left, .form-label-right, .form-label-top { display:none; }
 </style>
@@ -28,12 +29,12 @@ Welcome to my page, my name is Haim Reyes I'm 26 years old and I'm an Informatio
 Check out photos from my trips abraod<br>
 <picture>
 <img src="https://scontent.ftlv6-1.fna.fbcdn.net/v/t31.0-1/p320x320/18588883_1478760648853731_8625565466703798207_o.jpg?_nc_cat=111&_nc_sid=dbb9e7&_nc_ohc=mX4bBUsPQMgAX8UffZo&_nc_ht=scontent.ftlv6-1.fna&_nc_tp=6&oh=7efb455e892e5e3cba65ae223cb0f55a&oe=5E9FD152">
-</img>
 </picture>
 <picture>
-<img src="">
-image not found 
-</img>
+<img src="pic1.jpg">
+</picture>
+<picture>
+<img src="pic2.jpg">
 </picture>
 </section>
 
@@ -63,34 +64,57 @@ You know you should.<br>
 <h1>Q&A</h1>
 
 <strong>Three main differences between web1, web2 and web3</strong><br>
-first:<br>
-second:<br>
-third:<br>
-
- 
-
+first:<p>
+web1 is client-server based while web2 and web3 can be p2p based
+</p>
+second:<p>
+web1 and web2 are are design for millions to billions of users while web3 is designed for trillions of users
+<p>
+third:<p>
+web1 and web2 are design for the human user while web3 is also designed for machins
+</p>
+<strong>Two example use cases</strong><br>
+first:<p>
+Downloading a file:<br>
+In web1 the the file data will transfer from the host to the client (client-server).<br>
+In web3 and 3 the file data can be transfered from multiple sources (p2p).
+</p>
+second:<p>
+consuming news:<br>
+In web1 the user can only read pre-loaded articles (meaning there is a need to refresh the page in case something new happened while browsing).<br> 
+In web3 the user can read "breaking news" articles (freshly uploaded articles) while the page is already loaded (and even receive a notification).
+</p>
 </section>
 
 <section id="contact" class="section">
 <h1>contact me</h1>
 
-</section>
 
-<meta charset="UTF-8">
+
+
 <form action="mailto:reyes@post.bgu.ac.il" method="post" enctype="text/plain">
   Name:<br>
 <input type="text" name="name"><br>
 E-mail:<br>
-<input type="text" name="mail"><br>
+<input type="text" name="mail" required><br>
 Comment:<br>
-<textarea type="text" name="content" id="text"></textarea>
-<input type="submit" value="Send">
+<textarea id="text" type="text" name="content"  required></textarea><br>
+<span onClick=addEmoji("👻")>👻</span>
+<span onClick=addEmoji("😀")>😀</span>
+<span onClick=addEmoji("😷")>😷</span>
+<span onClick=addEmoji("🍕")>🍕</span>
+<span onClick=addEmoji("🦔")>🦔</span>
+<span onClick=addEmoji("🚑")>🚑</span>
+<span onClick=addEmoji("🕟")>🕟</span><br>
+<input id="button" type="submit" value="Send">
+
 </form>
-<button id="button">Add Emoji</span>
-<script>
-$("#button").click(function() {
-  document.getElementById("text").value += String.fromCodePoint(0x1F47B);
-});
+</section>
+<script type="text/javascript">
+function addEmoji(emojiNum) {
+  var emoji = document.getElementById("text");
+      emoji.value += emojiNum;
+};
 </script>
 
 <script type="text/javascript">
@@ -104,7 +128,7 @@ $(function(){
 <script type="text/javascript">
  $(document).scroll(function() {
     $('#menu').toggle($(this).scrollTop()>1000)
- });​
+ });?
  </script>
 
 </body>
